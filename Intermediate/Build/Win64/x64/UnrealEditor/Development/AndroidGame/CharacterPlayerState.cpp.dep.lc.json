@@ -1,0 +1,17 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\epic games\\project\\androidgame\\source\\androidgame\\playerstate\\characterplayerstate.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\epic games\\ue_5.2\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_1.h.pch",
+        "Includes": [
+            "e:\\epic games\\project\\androidgame\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\androidgame\\definitions.androidgame.h",
+            "e:\\epic games\\project\\androidgame\\source\\androidgame\\playerstate\\characterplayerstate.h",
+            "e:\\epic games\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\gameframework\\playerstate.h",
+            "e:\\epic games\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\playerstate.generated.h",
+            "e:\\epic games\\project\\androidgame\\intermediate\\build\\win64\\unrealeditor\\inc\\androidgame\\uht\\characterplayerstate.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
