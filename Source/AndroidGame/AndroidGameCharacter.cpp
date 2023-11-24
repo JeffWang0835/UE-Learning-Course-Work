@@ -7,10 +7,20 @@
 #include "Components/CapsuleComponent.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "TP_WeaponComponent.h"
+#include "Weapons/BaseWeapon.h"
 
 
 //////////////////////////////////////////////////////////////////////////
 // AAndroidGameCharacter
+
+void AAndroidGameCharacter::Fire()
+{
+	if(bHasRifle && Weapon)
+	{
+		Weapon->GetWeaponComponent()->Fire();
+	}
+}
 
 AAndroidGameCharacter::AAndroidGameCharacter()
 {
@@ -50,6 +60,7 @@ void AAndroidGameCharacter::BeginPlay()
 			Subsystem->AddMappingContext(DefaultMappingContext, 0);
 		}
 	}
+	Health = MaxHealth;
 
 }
 

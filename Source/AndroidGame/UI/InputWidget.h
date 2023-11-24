@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "Components/Button.h"
 #include "InputWidget.generated.h"
 
 /**
@@ -17,11 +16,23 @@ class ANDROIDGAME_API UInputWidget : public UUserWidget
 	
 public:
 	UPROPERTY(meta = (BindWidget))
-	UButton* JumpButton;
+	class UButton* JumpButton;
 
 	UPROPERTY(meta = (BindWidget))
 	UButton* FireButton;
 
+	UPROPERTY(meta = (BindWidget))
+	class UTextBlock* KillText;
+
+	UPROPERTY(meta = (BindWidget))
+	UTextBlock* DeathText;
+
+	UPROPERTY(meta = (BindWidget))
+	class UProgressBar* HealthBar;
+
+	UPROPERTY(meta = (BindWidget))
+	UTextBlock* NameText;
+	
 	void MenuSetup();
 protected:
 	UFUNCTION()
@@ -33,4 +44,7 @@ protected:
 private:
 	UPROPERTY()
 	class AShooterPlayerController* ShooterPlayerController;
+
+	UPROPERTY()
+	class AAndroidGameCharacter* GameCharacter;
 };

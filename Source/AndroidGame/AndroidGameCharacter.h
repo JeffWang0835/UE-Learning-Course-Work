@@ -42,12 +42,8 @@ class AAndroidGameCharacter : public ACharacter
 	
 public:
 	AAndroidGameCharacter();
-
-protected:
-	virtual void BeginPlay();
-
-public:
-		
+	void Fire();
+	
 	/** Look Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* LookAction;
@@ -65,23 +61,35 @@ public:
 	bool GetHasRifle();
 
 protected:
+	virtual void BeginPlay();
+	
 	/** Called for movement input */
 	void Move(const FInputActionValue& Value);
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
-
-protected:
+	
 	// APawn interface
 	virtual void SetupPlayerInputComponent(UInputComponent* InputComponent) override;
 	// End of APawn interface
 
+private:
+	UPROPERTY(VisibleAnywhere)
+	class ABaseWeapon* Weapon;
+
+	UPROPERTY(EditAnywhere)
+	int MaxHealth = 100;
+
+	UPROPERTY()
+	int Health = 100;
+	
 public:
 	/** Returns Mesh1P subobject **/
 	USkeletalMeshComponent* GetMesh1P() const { return Mesh1P; }
 	/** Returns FirstPersonCameraComponent subobject **/
 	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
-
-
+	void SetWeapon(ABaseWeapon* WeaponToSet) {Weapon = WeaponToSet;}
+	FORCEINLINE int GetMaxHealth() const {return MaxHealth;}
+	FORCEINLINE int GetHealth() const {return Health;}
 };
 
